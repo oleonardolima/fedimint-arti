@@ -40,6 +40,7 @@ static CACHE: Lazy<Mutex<TrustedUsersCache<PwdGrp>>> =
 
 /// Convert an [`io::Error `] representing a user/group handling failure into an [`Error`]
 fn handle_pwd_error(e: io::Error) -> Error {
+    dbg!(&e);
     Error::PasswdGroupIoError(e.into())
 }
 
